@@ -30,7 +30,7 @@ class LogDriver extends AbstractDriver
     public function send(SmsableInterface $smsable): array
     {
         $log = sprintf(
-            "To: %s | Content: \"%s\" | Template: \"%s\" | Data: %s\n",
+            "To: %s | Content: \"%s\" | Template: \"%s\" | Data: %s",
             $smsable->to->toE164(),
             $smsable->content,
             $smsable->template,
