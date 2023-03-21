@@ -1,0 +1,43 @@
+{
+    "name": "hyperf-ljh/sms",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "hyperf",
+        "sms"
+    ],
+    "description": "The Hyperf SMS package.",
+    "autoload": {
+        "psr-4": {
+            "HyperfLjh\\Sms\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "ext-json": "*",
+        "ext-simplexml": "*",
+        "giggsey/libphonenumber-for-php": "^8.12",
+        "hyperf-ljh/contract": "~1.0.0",
+        "hyperf/async-queue": "~3.0.0",
+        "hyperf/command": "~3.0.0",
+        "hyperf/config": "~3.0.0",
+        "hyperf/devtool": "~3.0.0",
+        "hyperf/di": "~3.0.0",
+        "hyperf/event": "~3.0.0",
+        "hyperf/framework": "~3.0.0",
+        "hyperf/guzzle": "~3.0.0",
+        "hyperf/logger": "~3.0.0"
+    },
+    "suggest": {
+        "hyperf/validation": "Required to use the validation."
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "hyperf": {
+            "config": "HyperfLjh\\Sms\\ConfigProvider"
+        }
+    }
+}

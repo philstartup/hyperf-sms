@@ -1,0 +1,28 @@
+<?php
+
+declare(strict_types=1);
+
+namespace %NAMESPACE%;
+
+use HyperfLjh\Contract\ShouldQueue;
+use HyperfLjh\Sms\Contracts\SenderInterface;
+use HyperfLjh\Sms\Smsable;
+
+class %CLASS% extends Smsable implements ShouldQueue
+{
+    /**
+     * Create a new SMS message instance.
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Build the SMS message.
+     */
+    public function build(SenderInterface $sender): void
+    {
+        $this->content('');
+    }
+}
