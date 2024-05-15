@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Exceptions;
+namespace Phillu\HyperfSms\Exceptions;
 
 use Psr\Http\Message\ResponseInterface;
 use RuntimeException;

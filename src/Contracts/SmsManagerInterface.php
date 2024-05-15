@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Contracts;
+namespace Phillu\HyperfSms\Contracts;
 
 interface SmsManagerInterface
 {
     /**
      * Send the given message immediately.
      *
-     * @throws \HyperfLjh\Sms\Exceptions\StrategicallySendMessageException
+     * @throws \Phillu\HyperfSms\Exceptions\StrategicallySendMessageException
      */
     public function sendNow(SmsableInterface $smsable): array;
 

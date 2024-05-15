@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Commands;
+namespace Phillu\HyperfSms\Commands;
 
 use Hyperf\Devtool\Generator\GeneratorCommand;
 

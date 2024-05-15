@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Drivers;
+namespace Phillu\HyperfSms\Drivers;
 
-use HyperfLjh\Sms\Contracts\SmsableInterface;
-use HyperfLjh\Sms\Exceptions\DriverErrorException;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Exceptions\DriverErrorException;
 
 class UCloudDriver extends AbstractDriver
 {
@@ -35,7 +35,7 @@ class UCloudDriver extends AbstractDriver
         $data   = $smsable->data;
         $params = [
             'Action'     => self::ENDPOINT_Action,
-            'SigContent' => $smsable->signature ? : $this->config->get('sig_content'),
+            'SigContent' => $smsable->signature ?: $this->config->get('sig_content'),
             'TemplateId' => $smsable->template,
             'PublicKey'  => $this->config->get('public_key'),
         ];

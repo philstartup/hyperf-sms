@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Drivers;
+namespace Phillu\HyperfSms\Drivers;
 
-use HyperfLjh\Sms\Contracts\SmsableInterface;
-use HyperfLjh\Sms\Exceptions\DriverErrorException;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Exceptions\DriverErrorException;
 
 /**
  * @see https://developer.qiniu.com/sms/api/5897/sms-api-send-message
@@ -35,8 +35,12 @@ class QiniuDriver extends AbstractDriver
             'Content-Type' => 'application/json',
         ];
 
-        $headers['Authorization'] = $this->generateSign($endpoint, 'POST', json_encode($params),
-            $headers['Content-Type']);
+        $headers['Authorization'] = $this->generateSign(
+            $endpoint,
+            'POST',
+            json_encode($params),
+            $headers['Content-Type']
+        );
 
         $response = $this->client->postJson($endpoint, $params, $headers);
 

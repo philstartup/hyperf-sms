@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Drivers;
+namespace Phillu\HyperfSms\Drivers;
 
 use Hyperf\Config\Config;
-use HyperfLjh\Sms\Client;
-use HyperfLjh\Sms\Contracts\DriverInterface;
+use Phillu\HyperfSms\Client;
+use Phillu\HyperfSms\Contracts\DriverInterface;
 
 abstract class AbstractDriver implements DriverInterface
 {
     /**
-     * @var \HyperfLjh\Sms\Client
+     * @var \Phillu\HyperfSms\Client
      */
     protected $client;
 

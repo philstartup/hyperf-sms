@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Contracts;
+namespace Phillu\HyperfSms\Contracts;
 
 interface StrategyInterface
 {

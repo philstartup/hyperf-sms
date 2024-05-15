@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Contracts;
+namespace Phillu\HyperfSms\Contracts;
 
 /**
  * @property string[] $senders
  * @property string $strategy
  * @property null|string $from
- * @property \HyperfLjh\Sms\Contracts\MobileNumberInterface $to
+ * @property \Phillu\HyperfSms\Contracts\MobileNumberInterface $to
  * @property null|string $content
  * @property null|string $template
  * @property null|string $signature
@@ -87,7 +87,7 @@ interface SmsableInterface
     /**
      * Send the SMS message immediately.
      *
-     * @throws \HyperfLjh\Sms\Exceptions\DriverErrorException
+     * @throws \Phillu\HyperfSms\Exceptions\DriverErrorException
      */
     public function send(?SenderInterface $sender = null): array;
 

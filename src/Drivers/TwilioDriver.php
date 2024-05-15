@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Drivers;
+namespace Phillu\HyperfSms\Drivers;
 
 use GuzzleHttp\Exception\ClientException;
-use HyperfLjh\Sms\Contracts\SmsableInterface;
-use HyperfLjh\Sms\Exceptions\DriverErrorException;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Exceptions\DriverErrorException;
 
 /**
  * @see https://www.twilio.com/docs/api/messaging/send-messages
@@ -27,7 +27,7 @@ class TwilioDriver extends AbstractDriver
 
         $params = [
             'To'   => $smsable->to->toE164(),
-            'From' => $this->config->get('from' . ($smsable->from ? : 'default')),
+            'From' => $this->config->get('from' . ($smsable->from ?: 'default')),
             'Body' => $smsable->content,
         ];
 

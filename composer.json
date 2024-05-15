@@ -1,45 +1,45 @@
 {
-    "name": "phillu/hypef-sms",
-    "type": "library",
-    "license": "MIT",
-    "keywords": [
-        "php",
-        "hyperf3",
-        "sms",
-        "lianlu"
-    ],
-    "description": "The Hyperf SMS package.",
-    "autoload": {
-        "psr-4": {
-            "Phillu\\HyperfSms\\": "src/"
-        }
-    },
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=8.0",
-        "ext-json": "*",
-        "ext-simplexml": "*",
-        "giggsey/libphonenumber-for-php": "^8.12",
-        "hyperf-ljh/contract": "~1.0.0",
-        "hyperf/async-queue": "~3.0.0",
-        "hyperf/command": "~3.0.0",
-        "hyperf/config": "~3.0.0",
-        "hyperf/devtool": "~3.0.0",
-        "hyperf/di": "~3.0.0",
-        "hyperf/event": "~3.0.0",
-        "hyperf/framework": "~3.0.0",
-        "hyperf/guzzle": "~3.0.0",
-        "hyperf/logger": "~3.0.0"
-    },
-    "suggest": {
-        "hyperf/validation": "Required to use the validation."
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "hyperf": {
-            "config": "Phillu\\HyperfSms\\ConfigProvider"
-        }
+  "name": "phillu/hypef-sms",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "hyperf3",
+    "sms",
+    "lianlu"
+  ],
+  "description": "The Hyperf SMS package.",
+  "autoload": {
+    "psr-4": {
+      "Phillu\\HyperfSms\\": "src/"
     }
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=8.1",
+    "ext-json": "*",
+    "ext-simplexml": "*",
+    "giggsey/libphonenumber-for-php": "^8.13",
+    "hyperf/async-queue": "^3.1",
+    "hyperf/command": "^3.1",
+    "hyperf/config": "^3.1",
+    "hyperf/devtool": "^3.1",
+    "hyperf/di": "^3.1",
+    "hyperf/event": "^3.1",
+    "hyperf/framework": "^3.1",
+    "hyperf/guzzle": "^3.1",
+    "hyperf/logger": "^3.1"
+  },
+  "suggest": {
+    "hyperf/validation": "Required to use the validation."
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "extra": {
+    "hyperf": {
+      "config": "Phillu\\HyperfSms\\ConfigProvider"
+    }
+  }
 }

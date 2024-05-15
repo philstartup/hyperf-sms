@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Drivers;
+namespace Phillu\HyperfSms\Drivers;
 
 use Hyperf\Logger\LoggerFactory;
-use HyperfLjh\Sms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
 use Psr\Container\ContainerInterface;
 
 class LogDriver extends AbstractDriver

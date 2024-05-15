@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Drivers;
+namespace Phillu\HyperfSms\Drivers;
 
-use HyperfLjh\Sms\Contracts\SmsableInterface;
-use HyperfLjh\Sms\Exceptions\DriverErrorException;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Exceptions\DriverErrorException;
 
 class AliyunDriver extends AbstractDriver
 {
@@ -25,7 +25,7 @@ class AliyunDriver extends AbstractDriver
     {
         $data = $smsable->data;
 
-        $signName = $smsable->signature ? : $this->config->get('sign_name');
+        $signName = $smsable->signature ?: $this->config->get('sign_name');
 
         $params = [
             'AccessKeyId'      => $this->config->get('access_key_id'),

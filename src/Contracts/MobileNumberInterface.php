@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Contracts;
+namespace Phillu\HyperfSms\Contracts;
 
 use Hyperf\Contract\Arrayable;
 
@@ -19,7 +19,7 @@ interface MobileNumberInterface extends Arrayable
      *                                       start with a '+' followed by the country calling code, then
      *                                       "ZZ" or null can be supplied.
      *
-     * @throws \HyperfLjh\Sms\Exceptions\InvalidMobileNumberException
+     * @throws \Phillu\HyperfSms\Exceptions\InvalidMobileNumberException
      */
     public function __construct(string $number, $defaultRegion = null);
 

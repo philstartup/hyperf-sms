@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms;
+namespace Phillu\HyperfSms;
 
 use Hyperf\AsyncQueue\Driver\DriverFactory;
 use Hyperf\Contract\CompressInterface;
 use Hyperf\Contract\UnCompressInterface;
-use Hyperf\Utils\ApplicationContext;
-use HyperfLjh\Sms\Contracts\MobileNumberInterface;
-use HyperfLjh\Sms\Contracts\SenderInterface;
-use HyperfLjh\Sms\Contracts\SmsableInterface;
-use HyperfLjh\Sms\Contracts\SmsManagerInterface;
-use HyperfLjh\Sms\Strategies\OrderStrategy;
+use Hyperf\Context\ApplicationContext;
+use Phillu\HyperfSms\Contracts\MobileNumberInterface;
+use Phillu\HyperfSms\Contracts\SenderInterface;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Contracts\SmsManagerInterface;
+use Phillu\HyperfSms\Strategies\OrderStrategy;
 
 abstract class Smsable implements SmsableInterface, CompressInterface, UnCompressInterface
 {
@@ -37,7 +37,7 @@ abstract class Smsable implements SmsableInterface, CompressInterface, UnCompres
     public $from;
 
     /**
-     * @var \HyperfLjh\Sms\Contracts\MobileNumberInterface
+     * @var \Phillu\HyperfSms\Contracts\MobileNumberInterface
      */
     public $to;
 
@@ -178,7 +178,7 @@ abstract class Smsable implements SmsableInterface, CompressInterface, UnCompres
      */
     protected function pushQueuedJob(QueuedSmsableJob $job, ?string $queue = null, ?int $delay = null)
     {
-        $queue = $queue ? : (property_exists($this, 'queue') ? $this->queue : array_key_first(config('async_queue')));
+        $queue = $queue ?: (property_exists($this, 'queue') ? $this->queue : array_key_first(config('async_queue')));
 
         return ApplicationContext::getContainer()->get(DriverFactory::class)->get($queue)->push($job, (int) $delay);
     }

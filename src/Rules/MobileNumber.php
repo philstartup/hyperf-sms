@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Rules;
+namespace Phillu\HyperfSms\Rules;
 
 class MobileNumber
 {

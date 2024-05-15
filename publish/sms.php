@@ -18,14 +18,14 @@ return [
      */
     'default'                      => [
         // 发送策略
-        'strategy' => \HyperfLjh\Sms\Strategies\OrderStrategy::class,
+        'strategy' => \Phillu\HyperfSms\Strategies\OrderStrategy::class,
         // 发送驱动
         'senders'  => ['aliyun', 'tencent_cloud'],
     ],
 
     'senders' => [
         'aliyun' => [
-            'driver' => \HyperfLjh\Sms\Drivers\AliyunDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\AliyunDriver::class,
             'config' => [
                 'access_key_id'     => '',
                 'access_key_secret' => '',
@@ -34,7 +34,7 @@ return [
         ],
 
         'baidu_cloud' => [
-            'driver' => \HyperfLjh\Sms\Drivers\BaiduCloudDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\BaiduCloudDriver::class,
             'config' => [
                 'ak'        => '',
                 'sk'        => '',
@@ -44,7 +44,7 @@ return [
         ],
 
         'huawei_cloud' => [
-            'driver' => \HyperfLjh\Sms\Drivers\HuaweiCloudDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\HuaweiCloudDriver::class,
             'config' => [
                 'endpoint'   => '',
                 'app_key'    => '',
@@ -57,21 +57,21 @@ return [
         ],
 
         'juhe_data' => [
-            'driver' => \HyperfLjh\Sms\Drivers\JuheDataDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\JuheDataDriver::class,
             'config' => [
                 'app_key' => '',
             ],
         ],
 
         'luosimao' => [
-            'driver' => \HyperfLjh\Sms\Drivers\LuosimaoDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\LuosimaoDriver::class,
             'config' => [
                 'api_key' => '',
             ],
         ],
 
         'qiniu' => [
-            'driver' => \HyperfLjh\Sms\Drivers\QiniuDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\QiniuDriver::class,
             'config' => [
                 'secret_key' => '',
                 'access_key' => '',
@@ -79,7 +79,7 @@ return [
         ],
 
         'rong_cloud' => [
-            'driver' => \HyperfLjh\Sms\Drivers\RongCloudDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\RongCloudDriver::class,
             'config' => [
                 'app_key'    => '',
                 'app_secret' => '',
@@ -87,7 +87,7 @@ return [
         ],
 
         'ronglian' => [
-            'driver' => \HyperfLjh\Sms\Drivers\RonglianDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\RonglianDriver::class,
             'config' => [
                 'app_id'         => '',
                 'account_sid'    => '',
@@ -97,7 +97,7 @@ return [
         ],
 
         'send_cloud' => [
-            'driver' => \HyperfLjh\Sms\Drivers\SendCloudDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\SendCloudDriver::class,
             'config' => [
                 'sms_user'  => '',
                 'sms_key'   => '',
@@ -106,7 +106,7 @@ return [
         ],
 
         'sms_bao' => [
-            'driver' => \HyperfLjh\Sms\Drivers\SmsBaoDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\SmsBaoDriver::class,
             'config' => [
                 'user'     => '',
                 'password' => '',
@@ -114,7 +114,7 @@ return [
         ],
 
         'tencent_cloud' => [
-            'driver' => \HyperfLjh\Sms\Drivers\TencentCloudDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\TencentCloudDriver::class,
             'config' => [
                 'sdk_app_id' => '',
                 'secret_id'  => '',
@@ -128,7 +128,7 @@ return [
         ],
 
         'twillo' => [
-            'driver' => \HyperfLjh\Sms\Drivers\TwilioDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\TwilioDriver::class,
             'config' => [
                 'account_sid' => '',
                 'token'       => '',
@@ -140,7 +140,7 @@ return [
         ],
 
         'ucloud' => [
-            'driver' => \HyperfLjh\Sms\Drivers\UCloudDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\UCloudDriver::class,
             'config' => [
                 'private_key' => '',
                 'public_key'  => '',
@@ -150,7 +150,7 @@ return [
         ],
 
         'yunpian' => [
-            'driver' => \HyperfLjh\Sms\Drivers\YunpianDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\YunpianDriver::class,
             'config' => [
                 'api_key'   => '',
                 'signature' => '',
@@ -158,7 +158,7 @@ return [
         ],
 
         'yunxin' => [
-            'driver' => \HyperfLjh\Sms\Drivers\YunxinDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\YunxinDriver::class,
             'config' => [
                 'app_key'     => '',
                 'app_secret'  => '',
@@ -168,7 +168,7 @@ return [
         ],
 
         'log' => [
-            'driver' => \HyperfLjh\Sms\Drivers\LogDriver::class,
+            'driver' => \Phillu\HyperfSms\Drivers\LogDriver::class,
             'config' => [
                 'name'  => 'sms.local',
                 'group' => 'default',

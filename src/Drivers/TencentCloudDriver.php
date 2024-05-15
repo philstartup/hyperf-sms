@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Drivers;
+namespace Phillu\HyperfSms\Drivers;
 
-use Hyperf\Utils\Arr;
-use HyperfLjh\Sms\Contracts\SmsableInterface;
-use HyperfLjh\Sms\Exceptions\DriverErrorException;
+use Hyperf\Collection\Arr;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Exceptions\DriverErrorException;
 
 /**
  * @see https://cloud.tencent.com/document/product/382/38763
@@ -49,9 +49,9 @@ class TencentCloudDriver extends AbstractDriver
         ];
 
         if ($smsable->to->getCountryCode() === 86) {
-            $params['Sign'] = $smsable->signature ? : $this->config->get('sign');
+            $params['Sign'] = $smsable->signature ?: $this->config->get('sign');
         } else {
-            $params['SenderId'] = $this->config->get('from' . ($smsable->from ? : 'default'));
+            $params['SenderId'] = $this->config->get('from' . ($smsable->from ?: 'default'));
         }
 
         $params = array_filter($params);
@@ -86,11 +86,11 @@ class TencentCloudDriver extends AbstractDriver
         $date = gmdate('Y-m-d', $timestamp);
 
         $canonicalHeaders = strtolower(implode(
-                "\n",
-                array_map(function ($v, $k) {
-                    return $k . ':' . $v;
-                }, $headers, array_keys($headers))
-            )) . "\n";
+            "\n",
+            array_map(function ($v, $k) {
+                return $k . ':' . $v;
+            }, $headers, array_keys($headers))
+        )) . "\n";
 
         $signedHeaders = implode(';', array_keys(array_change_key_case($headers, CASE_LOWER)));
 

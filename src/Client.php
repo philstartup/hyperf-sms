@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms;
+namespace Phillu\HyperfSms;
 
 use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
 use Hyperf\Guzzle\ClientFactory;
-use Hyperf\Utils\ApplicationContext;
-use HyperfLjh\Sms\Exceptions\RequestException;
+use Hyperf\Context\ApplicationContext;
+use Phillu\HyperfSms\Exceptions\RequestException;
 
 class Client
 {
@@ -24,7 +24,7 @@ class Client
     /**
      * Make a get request.
      *
-     * @throws \HyperfLjh\Sms\Exceptions\RequestException
+     * @throws \Phillu\HyperfSms\Exceptions\RequestException
      */
     public function get(string $url, array $query = [], array $headers = []): Response
     {
@@ -37,7 +37,7 @@ class Client
     /**
      * Make a post request.
      *
-     * @throws \HyperfLjh\Sms\Exceptions\RequestException
+     * @throws \Phillu\HyperfSms\Exceptions\RequestException
      */
     public function post(string $url, array $params = [], array $headers = []): Response
     {
@@ -50,7 +50,7 @@ class Client
     /**
      * Make a post request with json params.
      *
-     * @throws \HyperfLjh\Sms\Exceptions\RequestException
+     * @throws \Phillu\HyperfSms\Exceptions\RequestException
      */
     public function postJson(string $endpoint, array $params = [], array $headers = []): Response
     {

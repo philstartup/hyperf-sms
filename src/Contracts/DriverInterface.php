@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Contracts;
+namespace Phillu\HyperfSms\Contracts;
 
 interface DriverInterface
 {
     /**
      * Send the message.
      *
-     * @throws \HyperfLjh\Sms\Exceptions\DriverErrorException
+     * @throws \Phillu\HyperfSms\Exceptions\DriverErrorException
      */
     public function send(SmsableInterface $smsable): array;
 }

@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms;
+namespace Phillu\HyperfSms;
 
 use Hyperf\Contract\Arrayable;
+use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 use Psr\Http\Message\StreamInterface;
@@ -37,72 +38,72 @@ class Response implements ResponseInterface, Arrayable
         return [$contents];
     }
 
-    public function getProtocolVersion()
+    public function getProtocolVersion():string
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function withProtocolVersion($version)
+    public function withProtocolVersion($version):MessageInterface
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function getHeaders()
+    public function getHeaders(): array
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function hasHeader($name)
+    public function hasHeader($name):bool
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function getHeader($name)
+    public function getHeader($name): array
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function getHeaderLine($name)
+    public function getHeaderLine($name): string
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function withHeader($name, $value)
+    public function withHeader($name, $value): MessageInterface
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function withAddedHeader($name, $value)
+    public function withAddedHeader($name, $value): MessageInterface
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function withoutHeader($name)
+    public function withoutHeader($name): MessageInterface
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function getBody()
+    public function getBody(): StreamInterface
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function withBody(StreamInterface $body)
+    public function withBody(StreamInterface $body): MessageInterface
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function getStatusCode()
+    public function getStatusCode(): int
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function withStatus($code, $reasonPhrase = '')
+    public function withStatus($code, $reasonPhrase = ''): ResponseInterface
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }
 
-    public function getReasonPhrase()
+    public function getReasonPhrase(): string
     {
         return call_user_func_array([$this->response, __FUNCTION__], func_get_args());
     }

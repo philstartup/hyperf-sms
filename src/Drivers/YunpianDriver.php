@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Drivers;
+namespace Phillu\HyperfSms\Drivers;
 
-use HyperfLjh\Sms\Contracts\SmsableInterface;
-use HyperfLjh\Sms\Exceptions\DriverErrorException;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Exceptions\DriverErrorException;
 
 /**
  * @see https://www.yunpian.com/doc/zh_CN/intl/single_send.html
@@ -22,7 +22,7 @@ class YunpianDriver extends AbstractDriver
     {
         $endpoint = $this->buildEndpoint('sms', 'sms', 'single_send');
 
-        $signature = $smsable->signature ? : $this->config->get('signature', '');
+        $signature = $smsable->signature ?: $this->config->get('signature', '');
 
         $content = $smsable->content;
 
@@ -46,7 +46,13 @@ class YunpianDriver extends AbstractDriver
 
     protected function buildEndpoint(string $type, string $resource, string $function): string
     {
-        return sprintf(self::ENDPOINT_TEMPLATE, $type, self::ENDPOINT_VERSION, $resource, $function,
-            self::ENDPOINT_FORMAT);
+        return sprintf(
+            self::ENDPOINT_TEMPLATE,
+            $type,
+            self::ENDPOINT_VERSION,
+            $resource,
+            $function,
+            self::ENDPOINT_FORMAT
+        );
     }
 }

@@ -2,29 +2,29 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms;
+namespace Phillu\HyperfSms;
 
-use Hyperf\Utils\ApplicationContext;
-use HyperfLjh\Contract\HasMobileNumber;
-use HyperfLjh\Sms\Contracts\SmsableInterface;
-use HyperfLjh\Sms\Contracts\SmsManagerInterface;
+use Hyperf\Context\ApplicationContext;
+use Phillu\HyperfSms\Contracts\HasMobileNumberInterface;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Contracts\SmsManagerInterface;
 
 class PendingSms
 {
     /**
      * The "to" recipient of the message.
      *
-     * @var \HyperfLjh\Sms\Contracts\MobileNumberInterface
+     * @var \Phillu\HyperfSms\Contracts\MobileNumberInterface
      */
     protected $to;
 
     /**
-     * @var \HyperfLjh\Sms\Contracts\SmsManagerInterface
+     * @var \Phillu\HyperfSms\Contracts\SmsManagerInterface
      */
     protected $manger;
 
     /**
-     * @var \HyperfLjh\Sms\Contracts\SenderInterface
+     * @var \Phillu\HyperfSms\Contracts\SenderInterface
      */
     protected $sender;
 
@@ -36,15 +36,15 @@ class PendingSms
     /**
      * Set the recipients of the message.
      *
-     * @param  \HyperfLjh\Contract\HasMobileNumber|string  $number
+     * @param  \Phillu\HyperfSms\Contracts\HasMobileNumberInterface|string  $number
      * @param  null|int|string  $defaultRegion
      *
      * @return $this
-     * @throws \HyperfLjh\Sms\Exceptions\InvalidMobileNumberException
+     * @throws \Phillu\HyperfSms\Exceptions\InvalidMobileNumberException
      */
     public function to($number, $defaultRegion = null)
     {
-        $number = $number instanceof HasMobileNumber ? $number->getMobileNumber() : $number;
+        $number = $number instanceof HasMobileNumberInterface ? $number->getMobileNumber() : $number;
 
         $this->to = new MobileNumber($number, $defaultRegion);
 

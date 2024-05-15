@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace %NAMESPACE%;
 
-use HyperfLjh\Contract\ShouldQueue;
-use HyperfLjh\Sms\Contracts\SenderInterface;
-use HyperfLjh\Sms\Smsable;
+use Phillu\HyperfSms\Contract\ShouldQueueInterface;
+use Phillu\HyperfSms\Contracts\SenderInterface;
+use Phillu\HyperfSms\Smsable;
 
-class %CLASS% extends Smsable implements ShouldQueue
+class %CLASS% extends Smsable implements ShouldQueueInterface
 {
     /**
      * Create a new SMS message instance.

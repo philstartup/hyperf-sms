@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Rules;
+namespace Phillu\HyperfSms\Rules;
 
 class MobileNumberFormat
 {
@@ -32,6 +32,6 @@ class MobileNumberFormat
      */
     public function __toString(): string
     {
-        return 'phone_number_format:' . $this->format . ($this->defaultRegion ? : '');
+        return 'phone_number_format:' . $this->format . ($this->defaultRegion ?: '');
     }
 }

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms;
+namespace Phillu\HyperfSms;
 
-use HyperfLjh\Sms\Contracts\MobileNumberInterface;
-use HyperfLjh\Sms\Exceptions\InvalidMobileNumberException;
+use Phillu\HyperfSms\Contracts\MobileNumberInterface;
+use Phillu\HyperfSms\Exceptions\InvalidMobileNumberException;
 use libphonenumber\NumberParseException;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberType;
@@ -27,7 +27,7 @@ class MobileNumber implements MobileNumberInterface
     {
         $this->util = PhoneNumberUtil::getInstance();
 
-        $defaultRegion = $defaultRegion ? : config('sms.default_mobile_number_region');
+        $defaultRegion = $defaultRegion ?: config('sms.default_mobile_number_region');
 
         if (preg_match('/^\d+$/', (string) $defaultRegion) > 0) {
             $number        = '+' . $defaultRegion . $number;

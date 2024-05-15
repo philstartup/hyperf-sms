@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Listeners;
+namespace Phillu\HyperfSms\Listeners;
 
 use Hyperf\Event\Contract\ListenerInterface;
 use Hyperf\Validation\Event\ValidatorFactoryResolved;
-use HyperfLjh\Sms\MobileNumber;
+use Phillu\HyperfSms\MobileNumber;
 use LogicException;
 use Throwable;
 

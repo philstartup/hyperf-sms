@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Events;
+namespace Phillu\HyperfSms\Events;
 
-use HyperfLjh\Sms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
 
 class SmsMessageSent
 {
     /**
      * The message instance.
      *
-     * @var \HyperfLjh\Sms\Contracts\SmsableInterface
+     * @var \Phillu\HyperfSms\Contracts\SmsableInterface
      */
     public $smsable;
 

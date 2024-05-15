@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Exceptions;
+namespace Phillu\HyperfSms\Exceptions;
 
 /**
- * @method \HyperfLjh\Sms\Response getResponse()
+ * @method \Phillu\HyperfSms\Response getResponse()
  */
 class RequestException extends \GuzzleHttp\Exception\RequestException
 {

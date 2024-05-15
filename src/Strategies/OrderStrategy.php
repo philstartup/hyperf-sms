@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Strategies;
+namespace Phillu\HyperfSms\Strategies;
 
-use HyperfLjh\Sms\Concerns\HasSenderFilter;
-use HyperfLjh\Sms\Contracts\MobileNumberInterface;
-use HyperfLjh\Sms\Contracts\StrategyInterface;
+use Phillu\HyperfSms\Concerns\HasSenderFilter;
+use Phillu\HyperfSms\Contracts\MobileNumberInterface;
+use Phillu\HyperfSms\Contracts\StrategyInterface;
 
 class OrderStrategy implements StrategyInterface
 {

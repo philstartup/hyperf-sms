@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Listeners;
+namespace Phillu\HyperfSms\Listeners;
 
 use Hyperf\Event\Contract\ListenerInterface;
 use Hyperf\Framework\Event\BootApplication;
 use Hyperf\Validation\Rule;
-use HyperfLjh\Sms\Rules\MobileNumber;
-use HyperfLjh\Sms\Rules\MobileNumberFormat;
+use Phillu\HyperfSms\Rules\MobileNumber;
+use Phillu\HyperfSms\Rules\MobileNumberFormat;
 
 class BootApplicationListener implements ListenerInterface
 {

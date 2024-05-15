@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms;
+namespace Phillu\HyperfSms;
 
 use Hyperf\AsyncQueue\Job;
-use HyperfLjh\Sms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
 
 class QueuedSmsableJob extends Job
 {
     /**
-     * @var \HyperfLjh\Sms\Contracts\SmsableInterface
+     * @var \Phillu\HyperfSms\Contracts\SmsableInterface
      */
     public $smsable;
 

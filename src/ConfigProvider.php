@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms;
+namespace Phillu\HyperfSms;
 
-use HyperfLjh\Sms\Commands\GenSmsCommand;
-use HyperfLjh\Sms\Contracts\SmsManagerInterface;
-use HyperfLjh\Sms\Listeners\ValidatorFactoryResolvedListener;
+use Phillu\HyperfSms\Commands\GenSmsCommand;
+use Phillu\HyperfSms\Contracts\SmsManagerInterface;
+use Phillu\HyperfSms\Listeners\ValidatorFactoryResolvedListener;
 
 class ConfigProvider
 {
@@ -25,7 +25,7 @@ class ConfigProvider
             'publish'      => [
                 [
                     'id'          => 'config',
-                    'description' => 'The config for hyperf-ljh/sms.',
+                    'description' => 'The config for phillu/hyperf-sms.',
                     'source'      => __DIR__ . '/../publish/sms.php',
                     'destination' => BASE_PATH . '/config/autoload/sms.php',
                 ],

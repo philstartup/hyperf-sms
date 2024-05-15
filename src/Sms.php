@@ -1,15 +1,23 @@
 <?php
+/*
+ * @Author: luyongqiang phillu@outlook.com
+ * @Date: 2024-05-15 16:33:51
+ * @LastEditors: luyongqiang phillu@outlook.com
+ * @LastEditTime: 2024-05-15 17:46:36
+ * @FilePath: \WM-platform\wm-php\vendor\phillu\hyperf-sms\src\Sms.php
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms;
+namespace Phillu\HyperfSms;
 
-use Hyperf\Utils\ApplicationContext;
-use HyperfLjh\Contract\HasMailAddress;
-use HyperfLjh\Sms\Contracts\SmsManagerInterface;
+use Hyperf\Context\ApplicationContext;
+use Phillu\HyperfSms\Contracts\HasMailAddressInterface;
+use Phillu\HyperfSms\Contracts\SmsManagerInterface;
 
 /**
- * @method static \HyperfLjh\Sms\PendingSms to(HasMailAddress|string $number, null|int|string $defaultRegion = null)
+ * @method static \Phillu\HyperfSms\PendingSms to(HasMailAddressInterface|string $number, null|int|string $defaultRegion = null)
  */
 class Sms
 {

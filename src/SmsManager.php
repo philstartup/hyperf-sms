@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms;
+namespace Phillu\HyperfSms;
 
 use Hyperf\Contract\ConfigInterface;
-use HyperfLjh\Contract\ShouldQueue;
-use HyperfLjh\Sms\Contracts\SenderInterface;
-use HyperfLjh\Sms\Contracts\SmsableInterface;
-use HyperfLjh\Sms\Contracts\SmsManagerInterface;
-use HyperfLjh\Sms\Exceptions\StrategicallySendMessageException;
+use Phillu\HyperfSms\Contract\ShouldQueueInterface;
+use Phillu\HyperfSms\Contracts\SenderInterface;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Contracts\SmsManagerInterface;
+use Phillu\HyperfSms\Exceptions\StrategicallySendMessageException;
 use InvalidArgumentException;
 use LogicException;
 use Psr\Container\ContainerInterface;
@@ -27,7 +27,7 @@ class SmsManager implements SmsManagerInterface
     /**
      * The array of resolved senders.
      *
-     * @var \HyperfLjh\Sms\Contracts\SenderInterface[]
+     * @var \Phillu\HyperfSms\Contracts\SenderInterface[]
      */
     protected $senders = [];
 
@@ -67,8 +67,10 @@ class SmsManager implements SmsManagerInterface
                 return $smsable->send($this->get($sender));
             } catch (Throwable $throwable) {
                 $exception = empty($exception)
-                    ? new StrategicallySendMessageException('The SMS manger encountered some errors on strategically send the message',
-                        $throwable)
+                    ? new StrategicallySendMessageException(
+                        'The SMS manger encountered some errors on strategically send the message',
+                        $throwable
+                    )
                     : $exception->appendStack($exception);
             }
         }
@@ -78,7 +80,7 @@ class SmsManager implements SmsManagerInterface
 
     public function send(SmsableInterface $smsable)
     {
-        if ($smsable instanceof ShouldQueue) {
+        if ($smsable instanceof ShouldQueueInterface) {
             return $smsable->queue();
         }
 
@@ -96,10 +98,10 @@ class SmsManager implements SmsManagerInterface
     }
 
     /**
-     * @param  \HyperfLjh\Contract\HasMobileNumber|string  $number
+     * @param  \Phillu\HyperfSms\Contract\HasMobileNumberInterface|string  $number
      * @param  null|int|string  $defaultRegion
      *
-     * @throws \HyperfLjh\Sms\Exceptions\InvalidMobileNumberException
+     * @throws \Phillu\HyperfSms\Exceptions\InvalidMobileNumberException
      */
     public function to($number, $defaultRegion = null): PendingSms
     {
@@ -111,7 +113,7 @@ class SmsManager implements SmsManagerInterface
         $senders = (is_array($smsable->senders) && count($smsable->senders) > 0)
             ? $smsable->senders
             : (
-            is_array($this->config['default']['senders'])
+                is_array($this->config['default']['senders'])
                 ? $this->config['default']['senders']
                 : [$this->config['default']['senders']]
             );
@@ -120,7 +122,7 @@ class SmsManager implements SmsManagerInterface
             throw new LogicException('The SMS senders value is missing on SmsMessage class or default config');
         }
 
-        $strategy = $smsable->strategy ? : $this->config['default']['strategy'];
+        $strategy = $smsable->strategy ?: $this->config['default']['strategy'];
 
         if (empty($strategy)) {
             throw new LogicException('The SMS strategy value is missing on SmsMessage class or default config');

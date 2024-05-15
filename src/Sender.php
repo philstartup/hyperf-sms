@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms;
+namespace Phillu\HyperfSms;
 
 use Hyperf\Macroable\Macroable;
-use HyperfLjh\Sms\Contracts\SenderInterface;
-use HyperfLjh\Sms\Contracts\SmsableInterface;
-use HyperfLjh\Sms\Events\SmsMessageSending;
-use HyperfLjh\Sms\Events\SmsMessageSent;
+use Phillu\HyperfSms\Contracts\SenderInterface;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Events\SmsMessageSending;
+use Phillu\HyperfSms\Events\SmsMessageSent;
 use Psr\Container\ContainerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 
@@ -22,7 +22,7 @@ class Sender implements SenderInterface
     protected $name;
 
     /**
-     * @var \HyperfLjh\Sms\Contracts\DriverInterface
+     * @var \Phillu\HyperfSms\Contracts\DriverInterface
      */
     protected $driver;
 

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Concerns;
+namespace Phillu\HyperfSms\Concerns;
 
-use HyperfLjh\Sms\Contracts\MobileNumberInterface;
+use Phillu\HyperfSms\Contracts\MobileNumberInterface;
 
 trait HasSenderFilter
 {

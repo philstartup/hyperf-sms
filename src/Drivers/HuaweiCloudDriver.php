@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Drivers;
+namespace Phillu\HyperfSms\Drivers;
 
-use HyperfLjh\Sms\Contracts\SmsableInterface;
-use HyperfLjh\Sms\Exceptions\DriverErrorException;
-use HyperfLjh\Sms\Exceptions\RequestException;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Exceptions\DriverErrorException;
+use Phillu\HyperfSms\Exceptions\RequestException;
 use InvalidArgumentException;
 
 class HuaweiCloudDriver extends AbstractDriver
@@ -30,7 +30,7 @@ class HuaweiCloudDriver extends AbstractDriver
         $messageData = $smsable->data;
 
         // 短信签名通道号码
-        $from    = $smsable->from ? : 'default';
+        $from    = $smsable->from ?: 'default';
         $channel = $channels[$from] ?? '';
 
         if (empty($channel)) {

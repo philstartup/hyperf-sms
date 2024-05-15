@@ -32,7 +32,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\AliyunDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\AliyunDriver::class,
     'config' => [
         'access_key_id' => '',
         'access_key_secret' => '',
@@ -47,7 +47,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\BaiduCloudDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\BaiduCloudDriver::class,
     'config' => [
         'ak' => '',
         'sk' => '',
@@ -63,7 +63,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\HuaweiCloudDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\HuaweiCloudDriver::class,
     'config' => [
         'endpoint' => '', // 从管理控制台获取到的 App 接入地址
         'app_key' => '',
@@ -82,7 +82,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\JuheDataDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\JuheDataDriver::class,
     'config' => [
        'app_key' => '',
     ],
@@ -95,7 +95,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\LuosimaoDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\LuosimaoDriver::class,
     'config' => [
        'app_key' => '',
     ],
@@ -108,7 +108,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\QiniuDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\QiniuDriver::class,
     'config' => [
         'secret_key' => '',
         'access_key' => '',
@@ -122,7 +122,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\RongCloudDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\RongCloudDriver::class,
     'config' => [
         'app_key' => '',
         'app_secret' => '',
@@ -136,7 +136,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\RonglianDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\RonglianDriver::class,
     'config' => [
         'app_id' => '',
         'account_sid' => '',
@@ -152,7 +152,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\SendCloudDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\SendCloudDriver::class,
     'config' => [
         'sms_user' => '',
         'sms_key' => '',
@@ -167,7 +167,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\SmsBaoDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\SmsBaoDriver::class,
     'config' => [
         'user' => '',
         'password' => '',
@@ -181,7 +181,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\TencentCloudDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\TencentCloudDriver::class,
     'config' => [
         'sdk_app_id' => '',
         'secret_id' => '',
@@ -201,7 +201,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\TwilioDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\TwilioDriver::class,
     'config' => [
         'account_sid' => '',
         'token' => '',
@@ -219,7 +219,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\UCloudDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\UCloudDriver::class,
     'config' => [
         'private_key' => '',
         'public_key' => '',
@@ -235,7 +235,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\YunpianDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\YunpianDriver::class,
     'config' => [
         'api_key' => '',
         'signature' => '', // 短信签名，内容中无签名时使用
@@ -249,7 +249,7 @@ php bin/hyperf.php vendor:publish hyperf-ljh/sms
 
 ```php
 [
-    'driver' => \HyperfLjh\Sms\Drivers\YunxinDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\YunxinDriver::class,
     'config' => [
        'app_key' => '',
        'app_secret' => '',
@@ -292,7 +292,7 @@ php bin/hyperf.php gen:sms VerificationCode
 您也可以通过短信消息类的 `senders` 公开属性来指定可用发送器，如果您未在短信消息类中指定，那么在发送时会自动使用配置文件中指定的发送器。
 
 ```php
-use HyperfLjh\Sms\Smsable;
+use Phillu\HyperfSms\Smsable;
 
 class VerificationCode extends Smsable
 {
@@ -364,7 +364,7 @@ public function build(SenderInterface $sender): void
 ```php
 // 在配置文件中指定
 'twillo' => [
-    'driver' => \HyperfLjh\Sms\Drivers\TwilioDriver::class,
+    'driver' => \Phillu\HyperfSms\Drivers\TwilioDriver::class,
     'config' => [
         'account_sid' => '',
         'token' => '',
@@ -396,7 +396,7 @@ namespace App\Controller;
 use App\Sms\VerificationCode;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Contract\ResponseInterface;
-use HyperfLjh\Sms\Sms;
+use Phillu\HyperfSms\Sms;
 
 class VerificationController
 {
@@ -450,13 +450,13 @@ Sms::to($request->user())
 
 #### 默认使用队列
 
-如果你希望你的短信类始终使用队列，您可以给短信消息类实现 `HyperfLjh\Contract\ShouldQueue` 接口，现在即使你调用了 `send` 方法，短信依旧使用队列的方式发送。另外，如果需要将短信推送到指定队列，可以设置在短信消息类中设置 `queue` 属性。
+如果你希望你的短信类始终使用队列，您可以给短信消息类实现 `Phillu\HyperfSms\Contract\ShouldQueueInterface` 接口，现在即使你调用了 `send` 方法，短信依旧使用队列的方式发送。另外，如果需要将短信推送到指定队列，可以设置在短信消息类中设置 `queue` 属性。
 
 ```php
-use HyperfLjh\Contract\ShouldQueue;
-use HyperfLjh\Sms\Smsable;
+use Phillu\HyperfSms\Contract\ShouldQueueInterface;
+use Phillu\HyperfSms\Smsable;
 
-class VerificationCode extends Smsable implements ShouldQueue
+class VerificationCode extends Smsable implements ShouldQueueInterface
 {
     /**
      * 列队名称。

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace HyperfLjh\Sms\Drivers;
+namespace Phillu\HyperfSms\Drivers;
 
-use HyperfLjh\Sms\Contracts\SmsableInterface;
-use HyperfLjh\Sms\Exceptions\DriverErrorException;
+use Phillu\HyperfSms\Contracts\SmsableInterface;
+use Phillu\HyperfSms\Exceptions\DriverErrorException;
 
 /**
  * @see http://www.yuntongxun.com/doc/rest/sms/3_2_2_2.html
@@ -63,7 +63,16 @@ class RonglianDriver extends AbstractDriver
 
         $sig = strtoupper(md5($this->config->get('account_sid') . $this->config->get('account_token') . $datetime));
 
-        return sprintf(self::ENDPOINT_TEMPLATE, $serverIp, self::SERVER_PORT, self::SDK_VERSION, $accountType,
-            $this->config->get('account_sid'), $type, $resource, $sig);
+        return sprintf(
+            self::ENDPOINT_TEMPLATE,
+            $serverIp,
+            self::SERVER_PORT,
+            self::SDK_VERSION,
+            $accountType,
+            $this->config->get('account_sid'),
+            $type,
+            $resource,
+            $sig
+        );
     }
 }
