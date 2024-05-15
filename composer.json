@@ -1,16 +1,16 @@
 {
-    "name": "hyperf-ljh/sms",
+    "name": "phillu/hypef-sms",
     "type": "library",
     "license": "MIT",
     "keywords": [
         "php",
-        "hyperf",
+        "hyperf3",
         "sms"
     ],
     "description": "The Hyperf SMS package.",
     "autoload": {
         "psr-4": {
-            "HyperfLjh\\Sms\\": "src/"
+            "Phillu\\HyperfSms\\": "src/"
         }
     },
     "require": {
@@ -37,7 +37,7 @@
     },
     "extra": {
         "hyperf": {
-            "config": "HyperfLjh\\Sms\\ConfigProvider"
+            "config": "Phillu\\HyperfSms\\ConfigProvider"
         }
     }
 }
