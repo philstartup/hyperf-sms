@@ -5,7 +5,8 @@
     "keywords": [
         "php",
         "hyperf3",
-        "sms"
+        "sms",
+        "lianlu"
     ],
     "description": "The Hyperf SMS package.",
     "autoload": {
